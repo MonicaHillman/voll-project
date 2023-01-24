@@ -1,24 +1,34 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Cabecalho from './components/Cabecalho';
+import Card from './components/Card';
+import Container from './components/Container';
+import ContainerCard from './components/ContainerCard';
+import Grafico from './components/Grafico';
+import Rodape from './components/Rodape';
+import Subtitulo from './components/Subtitulo';
+import Tabela from './components/Tabela';
+import Titulo from './components/Titulo';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Cabecalho />
+      <Container>
+        <Titulo>Consultas do Dia</Titulo>
+        <Tabela />
+        <Titulo>Consultas mensais por especialista</Titulo>
+        <Subtitulo>Dezembro/22</Subtitulo>
+        <Grafico />
+        <Titulo>Avaliações de especialistas</Titulo>
+        <Subtitulo>Dezembro/22</Subtitulo>
+        <ContainerCard>
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+        </ContainerCard>
+      </Container>
+      <Rodape />
     </div>
   );
 }
