@@ -1,0 +1,32 @@
+.container {
+    display: flex;
+    align-items: center;
+}
+
+.imagem {
+
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.avaliacao {
+    width: 25px;
+    height: 25px;
+    background-image: url('./assets/avaliacao.png');
+}
+
+.grafico {
+    width: 25px;
+    height: 25px;
+    background-image: url('./assets/grafico.png');
+}
+
+.consulta {
+    width: 25px;
+    height: 25px;
+    background-image: url('./assets/consulta.png');
+}
+
+.titulo {
+    color: var(--azul-claro);
+}

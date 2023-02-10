@@ -1,6 +1,7 @@
-import React from 'react';
+import { Typography } from '@mui/material';
+import Botao from './components/Botao';
 import Cabecalho from './components/Cabecalho';
-import Card from './components/Card';
+import Card from './components/ContainerCard/Card';
 import Container from './components/Container';
 import ContainerCard from './components/ContainerCard';
 import Grafico from './components/Grafico';
@@ -11,15 +12,18 @@ import Titulo from './components/Titulo';
 
 function App() {
   return (
-    <div className="App">
+    <>
       <Cabecalho />
       <Container>
-        <Titulo>Consultas do Dia</Titulo>
+        <Titulo>Área Administrativa</Titulo>
+        <Botao>Cadastrar especialista</Botao>
+        <Titulo nome="consulta">Consultas do Dia</Titulo>
         <Tabela />
-        <Titulo>Consultas mensais por especialista</Titulo>
+        <Botao>Ver mais</Botao>
+        <Titulo nome="grafico">Consultas mensais por especialista</Titulo>
         <Subtitulo>Dezembro/22</Subtitulo>
         <Grafico />
-        <Titulo>Avaliações de especialistas</Titulo>
+        <Titulo nome="avaliacao">Avaliações de especialistas</Titulo>
         <Subtitulo>Dezembro/22</Subtitulo>
         <ContainerCard>
           <Card />
@@ -27,9 +31,10 @@ function App() {
           <Card />
           <Card />
         </ContainerCard>
+        <Botao>Ver mais</Botao>
       </Container>
       <Rodape />
-    </div>
+    </>
   );
 }
 
