@@ -9,8 +9,12 @@ import Rodape from './components/Rodape';
 import Subtitulo from './components/Subtitulo';
 import Tabela from './components/Tabela';
 import Titulo from './components/Titulo';
+import useFetch from './useFetch';
+import IProfissional from './types/IProfissional';
 
 function App() {
+  const { data, error } = useFetch<IProfissional[]>({ param: 'profissionais' });
+  if (error) { console.log(error) }
   return (
     <>
       <Cabecalho />
@@ -26,12 +30,11 @@ function App() {
         <Titulo nome="avaliacao">Avaliações de especialistas</Titulo>
         <Subtitulo>Dezembro/22</Subtitulo>
         <ContainerCard>
-          <Card />
-          <Card />
-          <Card />
-          <Card />
+          {data?.map((dado) => {
+            return <Card key={dado.id} dadosProfissional={dado} />
+          })}
         </ContainerCard>
-        <Botao>Ver mais</Botao>
+        {data?.length! > 4 && <Botao>Ver mais</Botao>}
       </Container>
       <Rodape />
     </>

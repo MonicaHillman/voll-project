@@ -1,6 +1,6 @@
-import { useEffect, useState } from 'react';
 import { styled } from '@mui/material/styles';
 import { Paper, Table, TableBody, TableCell, tableCellClasses, TableContainer, TableHead, TableRow } from '@mui/material';
+import useFetch from '../../useFetch';
 import IConsulta from '../../types/IConsulta';
 
 const ColunaEstilizada = styled(TableCell)(() => ({
@@ -26,15 +26,8 @@ const LinhaEstilizada = styled(TableRow)(({ theme }) => ({
 }));
 
 function Tabela() {
-    const [consultas, setConsultas] = useState<IConsulta[]>([]);
-
-    useEffect(() => {
-        fetch('http://localhost:3000/consultas').then(
-            resposta => resposta.json()
-        ).then((dados => setConsultas(dados)))
-    }, [])
-
-    console.log(consultas)
+    const { data, error } = useFetch<IConsulta[]>({ param: 'consultas' });
+    if (error) { console.log(error) }
     return (
         <TableContainer component={Paper}>
             <Table sx={{ minWidth: 700 }} aria-label="customized table">
@@ -49,7 +42,7 @@ function Tabela() {
                     </TableRow>
                 </TableHead>
                 <TableBody>
-                    {consultas.map((row) => (
+                    {data?.map((row) => (
                         <LinhaEstilizada key={row.id}>
                             <ColunaEstilizada component="th" scope="row">
                                 {row.data}
@@ -63,7 +56,7 @@ function Tabela() {
                     ))}
                 </TableBody>
             </Table>
-        </TableContainer>
+        </TableContainer >
     )
 }
 

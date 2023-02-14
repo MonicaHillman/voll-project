@@ -1,5 +1,21 @@
 .cabecalho {
     display: flex;
+    align-items: center;
     justify-content: space-between;
     padding: 2em 4em;
+}
+
+.container {
+    align-items: center;
+    display: flex;
+}
+
+.container img {
+    margin-right: 2em;
+}
+
+.container a {
+    color: var(--azul-escuro);
+    text-decoration: none;
+    font-weight: 700;
 }
