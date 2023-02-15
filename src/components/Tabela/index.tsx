@@ -28,6 +28,7 @@ const LinhaEstilizada = styled(TableRow)(({ theme }) => ({
 function Tabela() {
     const { data, error } = useFetch<IConsulta[]>({ param: 'consultas' });
     if (error) { console.log(error) }
+
     return (
         <TableContainer component={Paper}>
             <Table sx={{ minWidth: 700 }} aria-label="customized table">
@@ -45,7 +46,7 @@ function Tabela() {
                     {data?.map((row) => (
                         <LinhaEstilizada key={row.id}>
                             <ColunaEstilizada component="th" scope="row">
-                                {row.data}
+                                {new Date(row.data).toLocaleDateString()}
                             </ColunaEstilizada>
                             <ColunaEstilizada>{row.horario}</ColunaEstilizada>
                             <ColunaEstilizada>{row.profissional[0].nome}</ColunaEstilizada>
