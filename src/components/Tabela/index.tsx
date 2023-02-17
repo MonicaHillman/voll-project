@@ -26,7 +26,7 @@ const LinhaEstilizada = styled(TableRow)(({ theme }) => ({
 }));
 
 function Tabela() {
-    const { data, error } = useFetch<IConsulta[]>({ param: 'consultas' });
+    const { data, error } = useFetch<IConsulta[]>({ url: 'consultas' });
     if (error) { console.log(error) }
 
     return (

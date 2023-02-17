@@ -1,10 +1,14 @@
-import React from "react";
-import style from './Botao.module.css';
+import styled from 'styled-components';
 
-function Botao({ children }: { children: React.ReactNode }) {
-    return (
-        <button className={style.botao}>{children}</button>
-    )
-}
+const Botao = styled.button`
+    background-color: var(--azul-escuro);
+    border-radius: 8px;
+    padding: 12px 16px;
+    color: var(--branco);
+    border: none;
+    margin-top: 1em;
+    font-weight: 700;
+    line-height: 19px;
+`
 
 export default Botao;

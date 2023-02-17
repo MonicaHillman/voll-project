@@ -1,10 +1,9 @@
-import React from 'react';
+import styled from 'styled-components';
 
-function Subtitulo({ children }: { children: React.ReactNode }) {
-    return (
-        <h3>{children}</h3>
-    )
-}
-
+const Subtitulo = styled.h3`
+color: var(--azul-escuro);
+font-weight: 700;
+font-size: 18px;
+`
 
 export default Subtitulo;

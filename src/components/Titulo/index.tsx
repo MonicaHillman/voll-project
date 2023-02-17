@@ -1,13 +1,38 @@
+import styled from 'styled-components';
 import React from 'react';
-import style from './Titulo.module.css';
+import avaliacao from './assets/Avaliacao.png';
+import consulta from './assets/Consulta.png';
+import grafico from './assets/Grafico.png';
 
-function Titulo({ children, nome }: { children: React.ReactNode, nome?: String }) {
+interface Props {
+    imagem?: string,
+    children?: React.ReactNode
+}
+
+const ContainerEstilizado = styled.div`
+display: flex;
+align-items: center;
+`
+
+const SpanEstilizado = styled.span<Props>`
+background-repeat: no-repeat;
+background-position: center;
+width: 25px;
+height: 25px;
+background-image: url(${props => props.imagem});
+`
+
+const TituloEstilizado = styled.h2`
+color: var(--azul-claro);
+`
+
+function Titulo({ imagem, children }: Props) {
     return (
-        <div className={style.container}>
-            <span className={`${style.imagem} ${style[`${nome}`]}`} />
-            <h2 className={style.titulo}>{children}</h2>
-        </div>
+        <ContainerEstilizado>
+            <SpanEstilizado imagem={imagem} />
+            <TituloEstilizado>{children}</TituloEstilizado>
+        </ContainerEstilizado>
     )
-} 
+}
 
 export default Titulo;

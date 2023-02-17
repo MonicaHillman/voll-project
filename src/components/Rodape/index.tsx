@@ -2,19 +2,54 @@ import whatsapp from './assets/whatsapp.png';
 import instagram from './assets/instagram.png';
 import google from './assets/google.png';
 import facebook from './assets/facebook.png';
-import style from './Rodape.module.css';
+import styled from 'styled-components';
+
+const RodapeEstilizado = styled.footer`
+height: 100%;
+color: white;
+padding: 1em;
+background-color: #0B3B60;
+text-align: center;
+`
+
+const ListaEstilizada = styled.ul`
+display: flex;
+justify-content: space-around;
+width: 10%;
+margin: 1em auto;
+`
+
+const ItemEstilizado = styled.li`
+list-style-type: none;
+`
 
 function Rodape() {
     return (
-        <footer className={style.rodape}>
-            <ul className={style.lista}>
-                <li><a href="#"><img src={facebook} alt="logo do facebook" /></a></li>
-                <li><a href="#"><img src={whatsapp} alt="logo do whatsapp" /></a></li>
-                <li><a href="#"><img src={google} alt="logo do google" /></a></li>
-                <li><a href="#"><img src={instagram} alt="logo do instagram" /></a></li>
-            </ul>
+        <RodapeEstilizado>
+            <ListaEstilizada>
+                <ItemEstilizado>
+                    <a href="#">
+                        <img src={facebook} alt="logo do facebook" />
+                    </a>
+                </ItemEstilizado>
+                <ItemEstilizado>
+                    <a href="#">
+                        <img src={whatsapp} alt="logo do whatsapp" />
+                    </a>
+                </ItemEstilizado>
+                <ItemEstilizado>
+                    <a href="#">
+                        <img src={google} alt="logo do google" />
+                    </a>
+                </ItemEstilizado>
+                <ItemEstilizado>
+                    <a href="#">
+                        <img src={instagram} alt="logo do instagram" />
+                    </a>
+                </ItemEstilizado>
+            </ListaEstilizada>
             <p>2023 © Desenvolvido por Alura | Projeto fictício sem fins comerciais.</p>
-        </footer>
+        </RodapeEstilizado>
     )
 }
 

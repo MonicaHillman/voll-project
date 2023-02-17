@@ -2,12 +2,14 @@
   --azul-claro: #339CFF;
   --azul-escuro: #0B3B60;
   --branco: #FFFFFF;
+  --cinza: #6B6E71;
   --fonte-principal: 'Public Sans', sans-serif;
   --fonte-secundaria: 'Archivo', sans-serif;
 }
 
 body {
   margin: 0;
+  font-size: 16px;
   font-family: var(--fonte-principal);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
