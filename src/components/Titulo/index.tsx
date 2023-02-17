@@ -9,6 +9,12 @@ interface Props {
     children?: React.ReactNode
 }
 
+interface IImagens {
+    avaliacao: string,
+    grafico: string,
+    consulta: string
+}
+
 const ContainerEstilizado = styled.div`
 display: flex;
 align-items: center;
@@ -20,17 +26,26 @@ background-position: center;
 background-size: cover;
 width: 25px;
 height: 25px;
-background-image:url(${props => props.imagem});
+background-image: ${props => props.imagem ? `url(${props.imagem})` : 'none'};
 `
 
 const TituloEstilizado = styled.h2`
 color: var(--azul-claro);
 `
 
+
+
 function Titulo({ imagem, children }: Props) {
+    const listaDeImagens: IImagens = {
+        avaliacao: avaliacao,
+        grafico: grafico,
+        consulta: consulta,
+    }
+
     return (
         <ContainerEstilizado>
-            <SpanEstilizado imagem={imagem} />
+            {imagem && <SpanEstilizado imagem={listaDeImagens[imagem as keyof IImagens]} />}
+
             <TituloEstilizado>{children}</TituloEstilizado>
         </ContainerEstilizado>
     )
