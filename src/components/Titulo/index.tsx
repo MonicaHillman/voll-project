@@ -17,9 +17,10 @@ align-items: center;
 const SpanEstilizado = styled.span<Props>`
 background-repeat: no-repeat;
 background-position: center;
+background-size: cover;
 width: 25px;
 height: 25px;
-background-image: url(${props => props.imagem});
+background-image:url(${props => props.imagem});
 `
 
 const TituloEstilizado = styled.h2`

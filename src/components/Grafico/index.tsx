@@ -9,14 +9,6 @@ background-color: var(--branco);
 border-radius: 16px;
 `
 
-const XAxisEstilizado = styled(XAxis)`
-font-family: var(--fonte-secundaria)
-`
-
-const YAxisEstilizado = styled(YAxis)`
-font-family: var(--fonte-secundaria)
-`
-
 interface Props {
     profissionais: IProfissional[] | null,
     consultas: IConsulta[] | null
@@ -38,10 +30,10 @@ function Grafico({ profissionais, consultas }: Props) {
                     data={data}
                     margin={{ top: 25, right: 40, left: 40, bottom: 20 }}
                 >
-                    <XAxisEstilizado
+                    <XAxis
                         type="number"
                     />
-                    <YAxisEstilizado
+                    <YAxis
                         type="category"
                         dataKey="nome"
                     />
