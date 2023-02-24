@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import { Rating } from '@mui/material';
-import { useState } from 'react';
 import IProfissional from '../../../../types/IProfissional';
 
 const ContainerEstilizado = styled.div`
@@ -52,14 +51,13 @@ const ParagrafoEstilizado = styled.p`
 `
 
 function Card({ profissional }: { profissional: IProfissional }) {
-    const [value, setValue] = useState(profissional.nota);
     return (
         <ContainerEstilizado>
             <ListaEstilizada>
                 <ItemEstilizado>
                     <ImagemEstilizada
                         src={profissional.imagem}
-                        alt="Foto de perfil" />
+                        alt={`Foto de perfil de ${profissional.nome}`} />
                 </ItemEstilizado>
                 <ItemInformacoesEstilizado>
                     <ParagrafoNomeEstilizado>{profissional.nome}</ParagrafoNomeEstilizado>
@@ -68,11 +66,8 @@ function Card({ profissional }: { profissional: IProfissional }) {
                 <ItemEstilizado>
                     <Rating
                         name="simple-controlled"
-                        value={value}
-                        onChange={() => {
-                            setValue(value);
-                        }}
-
+                        value={profissional.nota}
+                        readOnly={true}
                     />
                 </ItemEstilizado>
             </ListaEstilizada>

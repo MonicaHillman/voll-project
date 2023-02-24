@@ -25,8 +25,7 @@ function App() {
         <Titulo>Área Administrativa</Titulo>
         <Botao>Cadastrar especialista</Botao>
         <Titulo imagem="consulta">Consultas do Dia</Titulo>
-        <Tabela />
-        <Botao>Ver mais</Botao>
+        <Tabela consultas={consultas}/>
         <Titulo imagem="grafico">Consultas mensais por especialista</Titulo>
         <Subtitulo>Dezembro/22</Subtitulo>
         <Grafico profissionais={profissionais} consultas={consultas} />

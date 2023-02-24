@@ -33,8 +33,6 @@ const TituloEstilizado = styled.h2`
 color: var(--azul-claro);
 `
 
-
-
 function Titulo({ imagem, children }: Props) {
     const listaDeImagens: IImagens = {
         avaliacao: avaliacao,
